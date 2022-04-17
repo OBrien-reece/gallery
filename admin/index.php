@@ -1,0 +1,73 @@
+<?php include("includes/header.php"); ?>
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            
+
+            <?php include('includes/top_nav.php'); ?>
+
+
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+
+            
+            <?php include('includes/side_nav.php'); ?>
+
+
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Blank Page
+                            <small>Subheading</small>
+                        </h1>
+
+                        <?php 
+                        // if($database->connection) {
+                        //     echo "True";
+                        // }
+
+                        //Test Query
+                        // $sql = "SELECT * FROM users WHERE id=1";
+                        // $result = $database->query($sql);
+                        // $user_found = mysqli_fetch_array($result);
+                        // echo $user_found['username'] . "<br>";
+
+                        // Test find_all_users
+                        // $result_set = User::find_all_users();
+                        // while($row = mysqli_fetch_array($result_set)) {
+                        //     echo $row['username'] . "<br>";
+                        //     echo $row['first_name'] . " ";
+                        //     echo $row['last_name'] . "<br>";
+                        // }
+
+                        // Test find users by ID
+                        $result_set = User::find_user_by_id(3);
+
+                        echo $result_set['username'];
+                        ?>
+
+                        <ol class="breadcrumb">
+                            <li>
+                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-file"></i> Blank Page
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container-fluid -->            
+        </div>
+        <!-- /#page-wrapper -->
+
+  <?php include("includes/footer.php"); ?>
