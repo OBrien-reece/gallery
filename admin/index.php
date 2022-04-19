@@ -48,9 +48,24 @@
                         // }
 
                         // Test find users by ID
+                        // $result_set = User::find_user_by_id(3);
+
+                        // $user = User::instanstiation($result_set);
+
+                        // echo $user->username;
+
+                        // $users = User::find_all_users();
+
+                        // foreach($users as $user) {
+
+                        //     echo $user->username . "<br>";
+                        // }
+
                         $result_set = User::find_user_by_id(3);
 
-                        echo $result_set['username'];
+                        echo $result_set->username;
+
+
                         ?>
 
                         <ol class="breadcrumb">
