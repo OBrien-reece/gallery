@@ -22,19 +22,50 @@
 
                 <!-- Page Heading -->
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-11">
                         <h1 class="page-header">
-                            COMMENTS
-                            <small>Subheading</small>
+                            Comments 
+                            <span class="text-primary" style="float: right;"><?php echo $message ?></span>
                         </h1>
-                        <ol class="breadcrumb">
-                            <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
-                            </li>
-                            <li class="active">
-                                <i class="fa fa-file"></i> Blank Page
-                            </li>
-                        </ol>
+                        
+
+                        <div class="col-md-12">
+                            <table class="table table-dark table-hover">
+                              <thead>
+                                <tr>
+                                  <th scope="col">ID</th>                                    
+                                  <th scope="col">Functionality</th>
+                                  <th scope="col">Author</th>
+                                  <th scope="col">Body</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+
+                                    <?php  
+
+                                    $comments = new Comment();
+                                    $comments = comment::find_all();
+                                    foreach($comments as $comment) : ?>
+
+                                    <tr>
+                                    <td><?php echo $comment->id ?></td>
+
+                                    <td class="actions_link">
+                                        <a href="delete_comment.php?id=<?php echo $comment->id ?>">Delete</a><br><br>
+                                        <a href="edit_comment.php?id=<?php echo $comment->id ?>">Edit</a><br><br>
+                                        <a href="#">View</a>
+                                    </td>
+
+
+                                    <td><?php echo $comment->author ?></td>
+                                    <td><?php echo $comment->body ?></td>
+                                    </tr>
+
+                                    <?php endforeach; ?>                                
+                              </tbody>
+                            </table>
+                        </div>
+
                     </div>
                 </div>
                 <!-- /.row -->

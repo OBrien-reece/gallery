@@ -10,6 +10,9 @@
                         <a href="upload.php"><i class="fa fa-fw fa-table"></i> Upload</a>
                     </li>
                     <li>
+                        <a href="display.php"><i class="fa fa-fw fa-table"></i> Display</a>
+                    </li>                    
+                    <li>
                         <a href="photos.php"><i class="fa fa-fw fa-table"></i> Photos</a>
                     </li>                    
                     <li>
